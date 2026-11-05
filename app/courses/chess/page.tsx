@@ -22,6 +22,7 @@ import {
 } from "lucide-react";
 import { getCourseSchema } from "@/config/seo-config";
 import ChessClassroomSection from "@/components/chess-classroom";
+import ChessRealLifeSkills from "@/components/chess-real-life-skills";
 
 const benefits = [
   { title: "Working Memory", desc: "Holding and manipulating multiple pieces of information simultaneously (directly relevant to multi-step Physics problems)." },
@@ -190,6 +191,9 @@ export default function ChessCoursePage() {
           </div>
         </div>
       </section>
+
+      {/* Real-World Transfer & Skills: How Chess Skills Apply to Real Life */}
+      <ChessRealLifeSkills />
 
       {/* Real Classroom Experience Section */}
       <ChessClassroomSection />

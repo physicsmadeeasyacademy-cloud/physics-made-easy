@@ -9,7 +9,9 @@ import {
   BookOpen, 
   Loader2, 
   Search,
-  Video
+  Video,
+  Facebook,
+  PlayCircle
 } from "lucide-react";
 import { getStudyMaterials } from "@/app/actions/adminActions"; // Import your Server Action
 import PageBanner from "@/components/pageBanner"; // Ensure you have this component from previous steps
@@ -58,6 +60,35 @@ export default function StudyMaterialsPage() {
 
       <div className="container mx-auto px-4 md:px-8 max-w-7xl -mt-10 relative z-20 pb-20">
         
+        {/* --- Featured Strategic Masterclass Banner --- */}
+        <div className="mb-10 p-6 md:p-8 rounded-[2rem] bg-gradient-to-br from-slate-950 via-slate-900 to-indigo-950 text-white border border-indigo-900/40 shadow-xl flex flex-col md:flex-row items-center justify-between gap-6">
+          <div className="flex items-start gap-4 sm:gap-5">
+            <div className="w-14 h-14 rounded-2xl bg-gradient-to-tr from-blue-600 via-indigo-600 to-amber-500 flex items-center justify-center text-white shrink-0 shadow-lg shadow-blue-500/20">
+              <Facebook className="w-7 h-7" />
+            </div>
+            <div className="space-y-1">
+              <div className="inline-flex items-center gap-1.5 px-3 py-0.5 rounded-full bg-blue-500/10 text-blue-400 text-[10px] font-black uppercase tracking-widest border border-blue-500/20">
+                <PlayCircle size={12} /> World Economic Forum · Chess & Strategic Thinking
+              </div>
+              <h3 className="text-lg md:text-xl font-black text-white leading-tight">
+                Grandmaster Yifan Hou: Finding The Right Move in Life & STEM
+              </h3>
+              <p className="text-slate-300 text-xs sm:text-sm font-medium leading-relaxed italic">
+                &ldquo;Sometimes the best move does not equal a perfect outcome. Sometimes there are no best moves, but the one that suits you the most.&rdquo;
+              </p>
+            </div>
+          </div>
+          <a
+            href="https://www.facebook.com/share/v/1De6NoMrez/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="px-5 py-3 rounded-xl bg-blue-600 hover:bg-blue-500 text-white font-black text-xs uppercase tracking-widest flex items-center gap-2 shrink-0 transition-all shadow-lg hover:scale-105 active:scale-95 whitespace-nowrap"
+          >
+            <span>Watch on Facebook</span>
+            <ExternalLink size={14} />
+          </a>
+        </div>
+
         {/* --- Controls Container --- */}
         <div className="flex flex-col md:flex-row justify-between items-center gap-6 mb-12">
           

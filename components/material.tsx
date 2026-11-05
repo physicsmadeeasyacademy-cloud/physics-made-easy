@@ -12,7 +12,9 @@ import {
   Zap,
   Globe,
   Video,
-  ExternalLink
+  ExternalLink,
+  Facebook,
+  Trophy
 } from "lucide-react";
 
 const TikTokIcon = ({ className = "w-5 h-5" }: { className?: string }) => (
@@ -140,39 +142,92 @@ export default function ResourcesSection() {
           </div>
         </div>
 
-        {/* --- Featured TikTok Video Card --- */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          className="mb-12 p-6 md:p-8 rounded-[2.5rem] bg-gradient-to-r from-slate-950 via-slate-900 to-slate-950 text-white border border-slate-800 shadow-2xl relative overflow-hidden flex flex-col md:flex-row items-center justify-between gap-6"
-        >
-          <div className="flex items-center gap-5">
-            <div className="w-16 h-16 rounded-2xl bg-gradient-to-tr from-cyan-500 to-pink-500 flex items-center justify-center text-white shrink-0 shadow-lg shadow-cyan-500/20">
-              <TikTokIcon className="w-8 h-8" />
-            </div>
-            <div>
-              <div className="inline-flex items-center gap-2 px-3 py-0.5 rounded-full bg-pink-500/10 text-pink-400 text-[10px] font-black uppercase tracking-widest border border-pink-500/20 mb-2">
-                <PlayCircle size={12} /> Featured Video Resource
-              </div>
-              <h3 className="text-xl md:text-2xl font-black text-white">
-                Teaching & Physics Insights on TikTok
-              </h3>
-              <p className="text-slate-400 text-sm md:text-base font-medium mt-1 max-w-xl">
-                &ldquo;Teaching is one of the few careers where your values become your daily actions. You don&rsquo;t wait years to matter—you matter immediately.&rdquo;
-              </p>
-            </div>
-          </div>
-          <a
-            href="https://vt.tiktok.com/ZSqHPNHgN/"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="px-6 py-4 rounded-2xl bg-gradient-to-r from-cyan-500 to-pink-500 hover:from-cyan-400 hover:to-pink-400 text-white font-black text-xs uppercase tracking-widest flex items-center gap-2 shrink-0 transition-all shadow-lg hover:scale-105 active:scale-95"
+        {/* --- Featured Video Spotlights --- */}
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 mb-12">
+          {/* 1. World Economic Forum Facebook Video */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="p-6 md:p-8 rounded-[2.5rem] bg-gradient-to-br from-slate-950 via-slate-900 to-indigo-950 text-white border border-indigo-900/40 shadow-2xl relative overflow-hidden flex flex-col justify-between gap-6"
           >
-            <span>Watch on TikTok</span>
-            <ExternalLink size={16} />
-          </a>
-        </motion.div>
+            <div className="flex items-start gap-4 sm:gap-5">
+              <div className="w-14 h-14 sm:w-16 sm:h-16 rounded-2xl bg-gradient-to-tr from-blue-600 to-indigo-500 flex items-center justify-center text-white shrink-0 shadow-lg shadow-blue-500/20">
+                <Facebook className="w-7 h-7 sm:w-8 sm:h-8" />
+              </div>
+              <div className="space-y-1.5">
+                <div className="inline-flex items-center gap-1.5 px-3 py-0.5 rounded-full bg-blue-500/10 text-blue-400 text-[10px] font-black uppercase tracking-widest border border-blue-500/20">
+                  <PlayCircle size={12} /> World Economic Forum · Chess & Strategy
+                </div>
+                <h3 className="text-xl md:text-2xl font-black text-white leading-tight">
+                  Grandmaster Yifan Hou: Finding the Right Move in Life
+                </h3>
+                <p className="text-slate-300 text-xs sm:text-sm font-medium leading-relaxed italic">
+                  &ldquo;Sometimes the best move does not equal a perfect outcome. Sometimes there are no best moves, but the one that suits you the most.&rdquo;
+                </p>
+                <p className="text-slate-400 text-xs leading-relaxed hidden sm:block">
+                  At 16, Yifan Hou became the youngest Women&rsquo;s World Chess Champion. In this WEF session, she explores how chess cultivates strategic foresight and resilience.
+                </p>
+              </div>
+            </div>
+            <div className="pt-2 border-t border-white/10 flex items-center justify-between gap-3">
+              <span className="text-[11px] font-bold text-slate-400 uppercase tracking-wider flex items-center gap-1.5">
+                <Trophy size={13} className="text-amber-400" /> FIDE Aligned Philosophy
+              </span>
+              <a
+                href="https://www.facebook.com/share/v/1De6NoMrez/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="px-5 py-3 rounded-xl bg-blue-600 hover:bg-blue-500 text-white font-black text-xs uppercase tracking-widest flex items-center gap-2 shrink-0 transition-all shadow-lg hover:scale-105 active:scale-95"
+              >
+                <span>Watch on Facebook</span>
+                <ExternalLink size={14} />
+              </a>
+            </div>
+          </motion.div>
+
+          {/* 2. TikTok Video */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="p-6 md:p-8 rounded-[2.5rem] bg-gradient-to-br from-slate-950 via-slate-900 to-slate-950 text-white border border-slate-800 shadow-2xl relative overflow-hidden flex flex-col justify-between gap-6"
+          >
+            <div className="flex items-start gap-4 sm:gap-5">
+              <div className="w-14 h-14 sm:w-16 sm:h-16 rounded-2xl bg-gradient-to-tr from-cyan-500 to-pink-500 flex items-center justify-center text-white shrink-0 shadow-lg shadow-cyan-500/20">
+                <TikTokIcon className="w-7 h-7 sm:w-8 sm:h-8" />
+              </div>
+              <div className="space-y-1.5">
+                <div className="inline-flex items-center gap-1.5 px-3 py-0.5 rounded-full bg-pink-500/10 text-pink-400 text-[10px] font-black uppercase tracking-widest border border-pink-500/20">
+                  <PlayCircle size={12} /> Featured Video Resource
+                </div>
+                <h3 className="text-xl md:text-2xl font-black text-white leading-tight">
+                  Teaching & Physics Insights on TikTok
+                </h3>
+                <p className="text-slate-400 text-xs sm:text-sm font-medium leading-relaxed">
+                  &ldquo;Teaching is one of the few careers where your values become your daily actions. You don&rsquo;t wait years to matter—you matter immediately.&rdquo;
+                </p>
+                <p className="text-slate-400 text-xs leading-relaxed hidden sm:block">
+                  Bite-sized video lessons & educational philosophy breakdowns by Mr. Chew on learning Physics with purpose.
+                </p>
+              </div>
+            </div>
+            <div className="pt-2 border-t border-white/10 flex items-center justify-between gap-3">
+              <span className="text-[11px] font-bold text-slate-400 uppercase tracking-wider flex items-center gap-1.5">
+                <Zap size={13} className="text-cyan-400" /> Weekly Concepts
+              </span>
+              <a
+                href="https://vt.tiktok.com/ZSqHPNHgN/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="px-5 py-3 rounded-xl bg-gradient-to-r from-cyan-500 to-pink-500 hover:from-cyan-400 hover:to-pink-400 text-white font-black text-xs uppercase tracking-widest flex items-center gap-2 shrink-0 transition-all shadow-lg hover:scale-105 active:scale-95"
+              >
+                <span>Watch on TikTok</span>
+                <ExternalLink size={14} />
+              </a>
+            </div>
+          </motion.div>
+        </div>
 
         {/* --- High-Density Content Grid --- */}
         <motion.div 

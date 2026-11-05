@@ -76,8 +76,19 @@ export default function Footer() {
               Bridging the gap between rote learning and true understanding. Led by Ex-MOE Scholar Mr. Chew, we master Physics through logic, strategy, and critical thinking.
             </p>
             <div className="flex gap-4">
-              {[Facebook, Linkedin, Youtube].map((Icon, i) => (
-                <a key={i} href="#" className="w-10 h-10 rounded-full bg-slate-900 border border-slate-800 flex items-center justify-center hover:bg-teal-600 hover:text-white hover:border-teal-600 transition-all duration-300">
+              {[
+                { Icon: Facebook, href: "https://www.facebook.com/share/v/1De6NoMrez/", label: "Facebook Video" },
+                { Icon: Linkedin, href: "#", label: "LinkedIn" },
+                { Icon: Youtube, href: "#", label: "YouTube" },
+              ].map(({ Icon, href, label }, i) => (
+                <a
+                  key={i}
+                  href={href}
+                  target={href !== "#" ? "_blank" : undefined}
+                  rel={href !== "#" ? "noopener noreferrer" : undefined}
+                  aria-label={label}
+                  className="w-10 h-10 rounded-full bg-slate-900 border border-slate-800 flex items-center justify-center hover:bg-teal-600 hover:text-white hover:border-teal-600 transition-all duration-300"
+                >
                   <Icon className="w-5 h-5" />
                 </a>
               ))}
