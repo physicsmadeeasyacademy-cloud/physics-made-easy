@@ -1,3 +1,15 @@
+export async function middleware(req: NextRequest) {
+  // 1. Enforce www canonical domain
+  const host = req.headers.get("host") || "";
+  if (host === "makephysicseasy.com") {
+    const newUrl = req.nextUrl.clone();
+    newUrl.host = "www.makephysicseasy.com";
+    return NextResponse.redirect(newUrl, 301);
+  }
+
+  const { pathname } = req.nextUrl;
+  // ... rest of middleware ...
+  
 import { getToken } from "next-auth/jwt";
 import { NextResponse } from "next/server";
 import type { NextRequest } from "next/server";
