@@ -1058,7 +1058,9 @@ export const CRAWL_RULES = {
   ],
   disallow: [
     "/admin",
+    "/admin/*",
     "/api",
+    "/api/*",
     "/login",
   ],
   /**
