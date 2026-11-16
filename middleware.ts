@@ -1,3 +1,7 @@
+import { getToken } from "next-auth/jwt";
+import { NextResponse } from "next/server";
+import type { NextRequest } from "next/server";
+
 export async function middleware(req: NextRequest) {
   // 1. Enforce www canonical domain
   const host = req.headers.get("host") || "";
@@ -8,21 +12,13 @@ export async function middleware(req: NextRequest) {
   }
 
   const { pathname } = req.nextUrl;
-  // ... rest of middleware ...
-  
-import { getToken } from "next-auth/jwt";
-import { NextResponse } from "next/server";
-import type { NextRequest } from "next/server";
 
-export async function middleware(req: NextRequest) {
-  const { pathname } = req.nextUrl;
-
-  // 1. Skip NextAuth routes
+  // 2. Skip NextAuth routes
   if (pathname.startsWith("/api/auth")) {
     return NextResponse.next();
   }
 
-  // 2. ⚠️ FIX: Skip UploadThing Route
+  // 3. Skip UploadThing Route
   // UploadThing sends a POST webhook to this URL. It has no session cookies,
   // so we must allow it to pass through. Internal security is handled by UploadThing's secret.
   if (pathname.startsWith("/api/uploadthing")) {
@@ -54,7 +50,12 @@ export async function middleware(req: NextRequest) {
 
 export const config = {
   matcher: [
-    "/admin/:path*",
-    "/api/:path*",
+    /*
+     * Match all request paths except:
+     * - _next/static (static files)
+     * - _next/image (image optimization files)
+     * - favicon.ico, images, og files
+     */
+    "/((?!_next/static|_next/image|favicon.ico|.*\\.(?:svg|png|jpg|jpeg|gif|webp)$).*)",
   ],
 };

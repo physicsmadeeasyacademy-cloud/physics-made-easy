@@ -1053,14 +1053,15 @@ export const CRAWL_RULES = {
     "/courses/o-level",
     "/courses/ib-physics",
     "/courses/a-level",
+    "/courses/aeis-maths",
     "/courses/chess",
     "/courses/skills",
   ],
   disallow: [
     "/admin",
-    "/admin/*",
+    "/admin/",
     "/api",
-    "/api/*",
+    "/api/",
     "/login",
   ],
   /**
@@ -1106,6 +1107,7 @@ export const SITEMAP_STATIC_PAGES: Array<{
   { path: "/courses/o-level", changeFrequency: "weekly", priority: 0.8 },
   { path: "/courses/ib-physics", changeFrequency: "weekly", priority: 0.8 },
   { path: "/courses/a-level", changeFrequency: "weekly", priority: 0.8 },
+  { path: "/courses/aeis-maths", changeFrequency: "weekly", priority: 0.8 },
   { path: "/courses/chess", changeFrequency: "weekly", priority: 0.8 },
   { path: "/courses/skills", changeFrequency: "weekly", priority: 0.8 },
 ];
