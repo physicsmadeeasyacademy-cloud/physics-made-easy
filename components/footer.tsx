@@ -192,6 +192,25 @@ export default function Footer() {
                 </div>
               </div>
 
+              {/* Location 4: Braddell Studio (When Venues Are Full) */}
+              <div className="flex items-start gap-3 text-sm group">
+                <MapPin className="w-5 h-5 text-emerald-400 shrink-0 mt-0.5" />
+                <div>
+                  <p className="text-xs font-bold text-emerald-400 uppercase tracking-wider">Braddell Studio (When Venues Are Full)</p>
+                  <p className="text-slate-400 group-hover:text-white transition-colors text-xs leading-relaxed mt-0.5">
+                    Near Braddell MRT (Serving Toa Payoh & Bishan) · Room A & B
+                  </p>
+                  <a 
+                    href="https://www.braddellstudio.sg" 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    className="inline-block mt-1 text-[11px] font-semibold text-emerald-300 bg-emerald-950/60 border border-emerald-500/30 px-2 py-0.5 rounded hover:border-emerald-400 hover:text-white transition-colors"
+                  >
+                    Partner Studio · www.braddellstudio.sg ↗
+                  </a>
+                </div>
+              </div>
+
               {/* Phone Contacts */}
               <div className="flex items-start gap-3 text-sm group pt-1">
                 <Phone className="w-5 h-5 text-teal-500 shrink-0 mt-0.5" />

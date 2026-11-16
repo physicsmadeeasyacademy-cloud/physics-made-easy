@@ -75,11 +75,8 @@ export interface PageSeoEntry {
 
 export const PAGE_SEO: Record<string, PageSeoEntry> = {
   "/": {
-    // Previous title "Physics Made Easy Academy" = 25 chars → too short.
-    // New title targets 52 chars and leads with the primary keyword phrase.
-    title: "Physics Tuition Singapore | O-Level, A -Level & IB Levels",
-    description:
-      "Ex-MOE scholar Mr. Chew teaches O-Level, A-Level & IB Physics in Singapore. Multiple Intelligences method, proven A/B results. Book a trial lesson today.",
+    title: "Physics Tuition Singapore [95% A/B] | Physics Made Easy",
+    description: "95% A/B distinction track record. Ex-MOE scholar Mr. Chew coaches O-Level, A-Level H2 & IB Physics in Toa Payoh & Online. Book your trial lesson today!",
     keywords: [
       // High-frequency page terms confirmed by audit keyword scan & priority search intent
       "online physics tuition singapore",
@@ -120,9 +117,8 @@ export const PAGE_SEO: Record<string, PageSeoEntry> = {
   },
 
   "/courses/aeis-maths": {
-    title: "AEIS Mathematics Preparation Programme | Singapore Government School Admission",
-    description:
-      "Structured AEIS Mathematics preparation for international primary & secondary students seeking admission to Singapore government schools. MOE syllabus aligned, online & small group.",
+    title: "AEIS Maths Tuition Singapore [Govt School Entry] | Mr Chew",
+    description: "Pass the Singapore AEIS exam on your first attempt. Structured MOE-aligned maths coaching for international students. Online & small group. Enrol today!",
     keywords: [
       "AEIS mathematics preparation",
       "AEIS maths tuition singapore",
@@ -148,9 +144,8 @@ export const PAGE_SEO: Record<string, PageSeoEntry> = {
   },
 
   "/about": {
-    title: "About Mr. Chew | NTU Physics Faculty & Ex-MOE Scholar Singapore",
-    description:
-      "Meet Mr. Chew Kok Mun — NTU 1st year undergraduate Physics instructor, Ex-MOE scholar, IB-certified M.Ed. candidate, FIDE instructor, and founder of Physics Made Easy.",
+    title: "About Mr. Chew Kok Mun | Ex-MOE Scholar & NTU Instructor",
+    description: "Ex-MOE PSC Scholar, current NTU physics instructor & IB-certified M.Ed. educator. Discover Mr. Chew's 20-year track record transforming student physics grades.",
     keywords: [
       "Mr Chew Kok Mun physics tutor",
       "NTU physics tutor singapore",
@@ -173,9 +168,8 @@ export const PAGE_SEO: Record<string, PageSeoEntry> = {
   },
 
   "/courses": {
-    title: "Physics & Chess Courses Singapore | O-Level, IB, A-Level",
-    description:
-      "Structured programmes for GCE O-Level, A-Level H2, IB HL/SL Physics, plus FIDE-certified chess coaching. Small groups and 1-to-1 options in Singapore.",
+    title: "Physics Tuition Courses Singapore [O-Level, JC, IB] | PME",
+    description: "Compare O-Level, A-Level H2 & IB Physics tuition packages. Small groups (max 6) & 1-on-1 options in Toa Payoh & Online. View schedules & fees!",
     keywords: [
       "O level physics course singapore",
       "IB HL physics tuition singapore",
@@ -198,9 +192,8 @@ export const PAGE_SEO: Record<string, PageSeoEntry> = {
   },
 
   "/curriculum": {
-    title: "Physics Curriculum | Structured Exam Preparation Singapore",
-    description:
-      "See how Physics Made Easy maps topics from foundations to exam mastery for O-Level, A-Level, and IB — with clear milestones and practice focus.",
+    title: "Physics Curriculum & Syllabus Breakdown | O/A-Level & IB",
+    description: "Explore topic-by-topic Physics roadmaps from foundations to exam mastery for O-Level, A-Level & IB. Concept-first milestones. Download syllabus guide!",
     keywords: [
       "physics curriculum singapore",
       "O level physics syllabus coverage",
@@ -215,9 +208,8 @@ export const PAGE_SEO: Record<string, PageSeoEntry> = {
   },
 
   "/multiple": {
-    title: "Multiple Intelligences Teaching | Physics Made Easy",
-    description:
-      "How Howard Gardner's Multiple Intelligences theory powers our Physics and logic teaching — tailored to how each student thinks and learns best.",
+    title: "Multiple Intelligences Physics Method [95% A/B] | Mr Chew",
+    description: "Say goodbye to rote memorization. Learn how the Multiple Intelligences (MI) method delivers 95% A/B results for O-Level & IB Physics students. Discover how!",
     keywords: [
       "multiple intelligences tuition singapore",
       "differentiated physics learning",
@@ -231,9 +223,8 @@ export const PAGE_SEO: Record<string, PageSeoEntry> = {
   },
 
   "/science": {
-    title: "Conceptual Physics Learning | Beyond Formulas Singapore",
-    description:
-      "Build real conceptual understanding in Physics — vocabulary, models, and problem-solving — so exam questions make sense, not just memorised steps.",
+    title: "Conceptual Physics Learning [Beyond Formulas] | Singapore",
+    description: "Build deep conceptual understanding in Physics so exam questions become intuitive, not memorised steps. Master answering techniques. Book your trial!",
     keywords: [
       "physics conceptual understanding",
       "science tuition singapore",
@@ -247,9 +238,8 @@ export const PAGE_SEO: Record<string, PageSeoEntry> = {
   },
 
   "/achievements": {
-    title: "Student Results & Achievements | Physics Made Easy SG",
-    description:
-      "95% of O-Level students score A/B; strong IB Grade 7 outcomes. View success stories and results from Physics Made Easy students in Singapore.",
+    title: "Physics Tuition Track Record [95% A/B Grades] | Proof",
+    description: "Real student results: 95% O-Level A1/A2 distinctions and 100% IB HL Grade 7s. Read case studies and score improvements from RI, HCI & ACSI students!",
     keywords: [
       "physics tuition results singapore",
       "O level physics grade A results",
@@ -269,9 +259,8 @@ export const PAGE_SEO: Record<string, PageSeoEntry> = {
   },
 
   "/gallery": {
-    title: "Gallery | Physics Classes & Student Moments Singapore",
-    description:
-      "Photos from Physics Made Easy classes, workshops, and student achievements at our Toa Payoh centre and online sessions.",
+    title: "Classroom & Student Gallery | Physics Made Easy Toa Payoh",
+    description: "Take a look inside Physics Made Easy classes, hands-on lab demonstrations, and student learning moments at our Toa Payoh centre and online sessions.",
     keywords: [
       "physics tuition centre photos",
       "physics class singapore gallery",
@@ -284,9 +273,8 @@ export const PAGE_SEO: Record<string, PageSeoEntry> = {
   },
 
   "/blog": {
-    title: "Physics Blog | Exam Tips & Study Guides Singapore",
-    description:
-      "Exam strategies, concept explainers, and study tips from Mr. Chew for O-Level, A-Level, and IB Physics students in Singapore.",
+    title: "Physics Blog: Exam Answering Tips & Guides | Mr. Chew",
+    description: "Expert physics exam strategies, common misconception breakdowns & study hacks by ex-MOE scholar Mr. Chew for O-Level, H2 & IB students. Read latest tips!",
     keywords: [
       "physics blog singapore",
       "O level physics tips",
@@ -301,9 +289,8 @@ export const PAGE_SEO: Record<string, PageSeoEntry> = {
   },
 
   "/study": {
-    title: "Free Physics Study Material | Notes & Resources SG",
-    description:
-      "Download free Physics notes, practice questions, and revision resources curated by Mr. Chew for Singapore O-Level, A-Level, and IB students.",
+    title: "Free Physics Notes & Revision Guides [O/A-Level & IB]",
+    description: "Download free summary formula sheets, tricky question breakdowns & revision notes curated by ex-MOE scholar Mr. Chew for O-Level, A-Level & IB students.",
     keywords: [
       "free physics notes singapore",
       "O level physics resources",
@@ -318,9 +305,8 @@ export const PAGE_SEO: Record<string, PageSeoEntry> = {
   },
 
   "/contact": {
-    title: "Contact Physics Made Easy | Book a Trial Lesson SG",
-    description:
-      "Book a trial lesson or ask about O-Level, A-Level, and IB Physics tuition. Toa Payoh centre and online. WhatsApp +65 9727 7419.",
+    title: "Book a Physics Trial Lesson | Physics Made Easy Toa Payoh",
+    description: "Book a trial lesson with ex-MOE scholar Mr. Chew. Toa Payoh centre (near MRT) & live online classes. WhatsApp +65 9727 7419 for instant slot confirmation!",
     keywords: [
       "book physics tuition singapore",
       "physics tutor contact Toa Payoh",
@@ -334,9 +320,8 @@ export const PAGE_SEO: Record<string, PageSeoEntry> = {
   },
 
   "/methodology": {
-    title: "Physics Teaching Methodology Singapore | Multiple Intelligences | Mr. Chew",
-    description:
-      "Mr. Chew applies Howard Gardner's Multiple Intelligences theory to Physics and Chess coaching in Singapore. Discover the MI method that delivers 95% A/B results at O-Level and 100% Grade 7 at IB HL.",
+    title: "Multiple Intelligences Physics Method [95% A/B] | Mr Chew",
+    description: "Say goodbye to rote memorization. Learn how the Multiple Intelligences (MI) method delivers 95% A/B results for O-Level & IB Physics students. Discover how!",
     keywords: [
       "physics teaching methodology singapore",
       "multiple intelligences physics",
@@ -350,9 +335,8 @@ export const PAGE_SEO: Record<string, PageSeoEntry> = {
   },
 
   "/testimonials": {
-    title: "Student Results & Testimonials | Physics Made Easy Singapore | Mr. Chew",
-    description:
-      "Read verified results from Physics Made Easy students — O-Level A1, A-Level Distinction, IB HL Grade 7. Hear from HCIS, NJC, ACSI and RI students coached by ex-MOE scholar Mr. Chew.",
+    title: "Verified Physics Tuition Reviews [RI, HCI, ACSI] | PME",
+    description: "Verified parent & student testimonials. See how RI, HCI, NJC & ACSI students jumped 3–5 grades to score A1 & Distinctions with Mr. Chew. Read reviews!",
     keywords: [
       "physics tuition reviews singapore",
       "physics tuition results",
@@ -367,9 +351,8 @@ export const PAGE_SEO: Record<string, PageSeoEntry> = {
   },
 
   "/resources": {
-    title: "Free Physics Resources Singapore | O-Level, A-Level & IB Notes & Videos | Mr. Chew",
-    description:
-      "Access free physics notes, video masterclasses, exam trend analysis, and chess strategy videos for O-Level, A-Level, and IB Physics students in Singapore. Curated by ex-MOE scholar Mr. Chew.",
+    title: "Free Physics Resources & Video Lessons | Physics Made Easy",
+    description: "Free video masterclasses, exam trend analysis & formula sheets for O-Level, H2 & IB Physics. Curated by ex-MOE scholar Mr. Chew. Access free material now!",
     keywords: [
       "free physics resources singapore",
       "o level physics notes free",
@@ -384,9 +367,8 @@ export const PAGE_SEO: Record<string, PageSeoEntry> = {
   },
 
   "/courses/o-level": {
-    title: "O-Level Physics Tuition Singapore | Pure & Combined | Ex-MOE Scholar | Mr. Chew",
-    description:
-      "O-Level Physics tuition in Singapore led by ex-MOE PSC Scholar Mr. Chew. Pure and Combined Physics. 95% A1/A2 track record. Small groups in Toa Payoh. Book a free trial.",
+    title: "O-Level Physics Tuition Singapore [95% A1/A2] | Mr. Chew",
+    description: "Score A1/A2 in Pure & Combined Physics. Ex-MOE scholar Mr. Chew teaches concept-first exam mastery in Toa Payoh & Online. Small groups. Book a trial!",
     keywords: [
       "o level physics tuition singapore",
       "pure physics tuition",
@@ -400,9 +382,8 @@ export const PAGE_SEO: Record<string, PageSeoEntry> = {
   },
 
   "/courses/ib-physics": {
-    title: "IB Physics Tutor Singapore | HL & SL | IA/EE Mentorship | Grade 7 Results",
-    description:
-      "IB Physics tuition in Singapore by ex-MOE scholar Mr. Chew. 95% Grade 7 HL track record. IA and Extended Essay mentorship. Small groups and 1-on-1. Book a free trial today.",
+    title: "IB Physics Tutor Singapore [Grade 7 & IA Help] | Mr. Chew",
+    description: "95% Grade 7 HL track record. IB-certified M.Ed. & ex-MOE scholar Mr. Chew guides HL/SL syllabus, IA simulation & EE mentorship. Book your trial session!",
     keywords: [
       "ib physics tutor singapore",
       "ib hl physics tuition",
@@ -417,9 +398,8 @@ export const PAGE_SEO: Record<string, PageSeoEntry> = {
   },
 
   "/courses/a-level": {
-    title: "H2 Physics Tuition Singapore | A-Level JC Physics | Quantum & Electromagnetism",
-    description:
-      "H2 Physics tuition Singapore for JC1 and JC2 students. Led by ex-MOE PSC Scholar Mr. Chew. Covers Quantum, EM Induction, Field Theory. 80% A/B track record. Book a trial.",
+    title: "H2 Physics Tuition Singapore [A-Level JC] | Mr. Chew",
+    description: "Master JC H2 Physics concepts without memorization. Ex-MOE scholar Mr. Chew simplifies Quantum, EM & Fields with 80% A/B results. Book your trial!",
     keywords: [
       "h2 physics tuition singapore",
       "a level physics tuition",
@@ -434,9 +414,8 @@ export const PAGE_SEO: Record<string, PageSeoEntry> = {
   },
 
   "/courses/chess": {
-    title: "Chess Coaching Singapore | FIDE Certified Instructor | Strategic Thinking for Students",
-    description:
-      "Chess coaching in Singapore by FIDE-certified International Instructor Mr. Chew. Develop tactical thinking, focus, and problem-solving skills for academic and competitive success.",
+    title: "Chess Coaching Singapore [FIDE Certified] | Mr. Chew",
+    description: "Learn tactical mastery & strategic thinking from FIDE instructor Mr. Chew. Tailored for kids & adults to build calculation skills. Book your trial class!",
     keywords: [
       "chess coaching singapore",
       "fide chess instructor",
@@ -453,9 +432,8 @@ export const PAGE_SEO: Record<string, PageSeoEntry> = {
   },
 
   "/courses/skills": {
-    title: "STEM Skills Mentorship Singapore | Quantum, FinTech & Career Readiness | Mr. Chew",
-    description:
-      "STEM career mentorship for Singapore students. Prepare for roles in Quantum Technology, FinTech, Green Energy, and Space with guidance from ex-MOE scholar Mr. Chew and industry mentor Peter Loh.",
+    title: "STEM & Quantum Skills Mentorship Singapore | Mr. Chew",
+    description: "Future-proof your career in Quantum, FinTech & AI. Mentorship by ex-MOE scholar Mr. Chew & industry mentor Peter Loh for secondary & JC students. Learn more!",
     keywords: [
       "stem skills mentorship",
       "career readiness singapore",
@@ -937,7 +915,7 @@ export const HOME_FAQS = [
   {
     question: "Where are classes held? Do you offer online tuition?",
     answer:
-      "In-person classes run at our Toa Payoh Central main centre at 185 Toa Payoh Central, Lift E, Blk, Toa Payoh Central, #02-342, Singapore 310185. We also conduct lessons at 186 Toa Payoh Central, Lobby H 02-430, Singapore 310186 on Wednesdays only, and at our West Branch (Beauty World Shopping Centre). We also offer online lessons for students who prefer learning from home or are based overseas — same structured curriculum and feedback.",
+      "In-person classes run at our Toa Payoh Central main centre at 185 Toa Payoh Central, Lift E, Blk, Toa Payoh Central, #02-342, Singapore 310185. We also conduct lessons at 186 Toa Payoh Central, Lobby H 02-430, Singapore 310186 on Wednesdays only, and at our West Branch (Beauty World Shopping Centre). When existing venues are at full capacity, lessons are arranged at our partner venue Braddell Studio (near Braddell MRT, accessible from Toa Payoh & Bishan). We also offer online lessons for students who prefer learning from home or are based overseas — same structured curriculum and feedback.",
   },
   {
     question: "How does chess coaching help with Physics?",
@@ -1009,7 +987,7 @@ The academy has a 5-year track record of academic transformation, with 95% of O-
 ## Key Facts
 
 - **Tutor**: Mr. Chew Kok Mun (Undergraduate Physics Instructor at NTU, M.Ed. candidate [IB-Certified, Geneva], Ex-MOE PSC scholar, FIDE chess instructor, MSc Heriot-Watt University)
-- **Location**: Main Centre: 185 Toa Payoh Central, Lift E, Blk, Toa Payoh Central, #02-342, Singapore 310185 (Wednesday lessons: 186 Toa Payoh Central, Lobby H 02-430, Singapore 310186 — Wednesdays only; West Branch at Beauty World Shopping Centre)
+- **Location**: Main Centre: 185 Toa Payoh Central, Lift E, Blk, Toa Payoh Central, #02-342, Singapore 310185 (Wednesday lessons: 186 Toa Payoh Central, Lobby H 02-430, Singapore 310186 — Wednesdays only; West Branch at Beauty World Shopping Centre; Satellite overflow studio at Braddell Studio near Braddell MRT when existing venues are full)
 - **Near**: Toa Payoh MRT (North-South Line)
 - **Online**: Yes — same curriculum and feedback as in-person
 - **Syllabuses**: GCE O-Level, A-Level H2, IB HL/SL, IP, IGCSE Physics

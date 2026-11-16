@@ -178,6 +178,35 @@ const ContactSection: React.FC = () => {
                            </span>
                         </div>
                      </div>
+
+                     {/* Location 4: Braddell Studio (When Existing Venues Are Full) */}
+                     <div className="flex items-start gap-5 group">
+                        <div className="w-12 h-12 rounded-2xl bg-white/5 border border-white/10 flex items-center justify-center shrink-0 mt-1">
+                           <MapPin className="w-5 h-5 text-emerald-400" />
+                        </div>
+                        <div>
+                           <p className="text-[10px] font-black text-emerald-400 uppercase tracking-widest mb-0.5">Braddell Studio (When Venues Are Full)</p>
+                           <p className="text-sm font-bold text-slate-300 leading-snug">
+                              Near Braddell MRT, Singapore
+                           </p>
+                           <p className="text-xs text-slate-400 mt-0.5">
+                              Room A & B (up to 8 students) · Accessible from Toa Payoh & Bishan
+                           </p>
+                           <div className="flex flex-wrap items-center gap-2 mt-1.5">
+                             <span className="inline-block text-[11px] font-bold text-emerald-300 bg-emerald-500/20 border border-emerald-500/30 px-2 py-0.5 rounded">
+                                Overflow & Small Group Venue
+                             </span>
+                             <a 
+                               href="https://www.braddellstudio.sg" 
+                               target="_blank" 
+                               rel="noopener noreferrer" 
+                               className="text-[11px] font-bold text-emerald-400 hover:text-emerald-300 transition-colors underline"
+                             >
+                               www.braddellstudio.sg ↗
+                             </a>
+                           </div>
+                        </div>
+                     </div>
                   </div>
                </div>
 
@@ -264,6 +293,7 @@ const ContactSection: React.FC = () => {
                           <option>Main Centre (Toa Payoh) Classes</option>
                           <option>Toa Payoh Wednesday Lessons</option>
                           <option>West Branch (Beauty World) Classes</option>
+                          <option>Braddell Studio (Overflow / Small Group)</option>
                           <option>General Enquiry</option>
                        </select>
                     </div>

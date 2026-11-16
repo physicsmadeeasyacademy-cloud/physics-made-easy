@@ -21,6 +21,12 @@ const faqs = [
     theme: "amber"
   },
   {
+    question: "What happens if lesson slots at Toa Payoh or the West branch are full?",
+    answer: "When existing venues reach full capacity, we arrange small-group lessons at our partner venue Braddell Studio (near Braddell MRT, accessible from Toa Payoh and Bishan). Braddell Studio is equipped with dedicated small-group rooms (Room A & B, up to 8 students), teaching panels, whiteboards, air-conditioning, and high-speed Wi-Fi, ensuring students receive personalized attention without overcrowding.",
+    category: "Locations",
+    theme: "blue"
+  },
+  {
     question: "Can I join online if I'm too lazy to travel?",
     answer: "Affirmative. We have a high-res discord-style online setup. Live streams, digital whiteboards, and recordings available 24/7.",
     category: "Logistics",

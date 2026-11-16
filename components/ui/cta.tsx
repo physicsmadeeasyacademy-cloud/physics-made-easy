@@ -72,6 +72,25 @@ const locations = [
       "Air-conditioned, high-speed Wi-Fi & large display screen",
       "Small group coaching for O-Level, A-Level & IB Physics"
     ]
+  },
+  {
+    id: "braddell-studio",
+    badge: "Braddell MRT · Overflow & Satellite Venue",
+    title: "Braddell Studio (When Existing Venues Are Full)",
+    subtitle: "Small-Group Partner Studio",
+    description: "When existing venues at Toa Payoh Central or the West are at full capacity, lessons are seamlessly arranged at Braddell Studio — a calm, professional teaching space near Braddell MRT featuring dedicated small-group rooms (Room A & Room B, up to 8 students), teaching panels, whiteboards, air-conditioned comfort, and high-speed Wi-Fi.",
+    address: "Near Braddell MRT (Accessible from Toa Payoh & Bishan), Singapore",
+    landmark: "Near Braddell MRT · Partner Studio (www.braddellstudio.sg)",
+    phone: "+65 9727 7419",
+    whatsappHref: "https://wa.me/6597277419?text=Hello!%20I'm%20interested%20in%20lessons%20at%20Braddell%20Studio%20(overflow%20venue%20when%20existing%20venues%20are%20full).",
+    ctaText: "Enquire (Braddell Studio)",
+    directionsUrl: "https://www.google.com/maps/dir/?api=1&destination=Braddell+MRT+Station+Singapore",
+    mapEmbedUrl: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3988.730303848148!2d103.8443936!3d1.3404543!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31da176007e0b571%3A0x6b77241bead600e1!2sBraddell!5e0!3m2!1sen!2ssg!4v1700000000000!5m2!1sen!2ssg",
+    features: [
+      "Dedicated small-group teaching rooms (Room A & B, up to 8 people)",
+      "Teaching panels, whiteboards & high-speed Wi-Fi",
+      "Near Braddell MRT, easily accessible from Toa Payoh & Bishan"
+    ]
   }
 ];
 
@@ -109,12 +128,22 @@ const VisitCampusCTA: React.FC = () => {
                         ? "bg-white text-teal-700 shadow-sm border border-slate-200/80 font-black"
                         : loc.id === "toa-payoh-wednesday"
                           ? "bg-white text-amber-700 shadow-sm border border-slate-200/80 font-black"
-                          : "bg-white text-indigo-700 shadow-sm border border-slate-200/80 font-black"
+                          : loc.id === "beauty-world"
+                            ? "bg-white text-indigo-700 shadow-sm border border-slate-200/80 font-black"
+                            : "bg-white text-emerald-700 shadow-sm border border-slate-200/80 font-black"
                       : "text-slate-500 hover:text-slate-900"
                   }`}
                 >
-                  <Compass size={14} className={isActive ? (loc.id === "toa-payoh" ? "text-teal-600" : loc.id === "toa-payoh-wednesday" ? "text-amber-600" : "text-indigo-600") : "text-slate-400"} />
-                  <span>{loc.id === "toa-payoh" ? "Main Centre (Blk 185)" : loc.id === "toa-payoh-wednesday" ? "Blk 186 (Wed Only)" : "West (Beauty World)"}</span>
+                  <Compass size={14} className={isActive ? (loc.id === "toa-payoh" ? "text-teal-600" : loc.id === "toa-payoh-wednesday" ? "text-amber-600" : loc.id === "beauty-world" ? "text-indigo-600" : "text-emerald-600") : "text-slate-400"} />
+                  <span>
+                    {loc.id === "toa-payoh" 
+                      ? "Main Centre (Blk 185)" 
+                      : loc.id === "toa-payoh-wednesday" 
+                        ? "Blk 186 (Wed Only)" 
+                        : loc.id === "beauty-world" 
+                          ? "West (Beauty World)" 
+                          : "Braddell Studio (Overflow)"}
+                  </span>
                 </button>
               );
             })}
@@ -137,7 +166,7 @@ const VisitCampusCTA: React.FC = () => {
               <div className="lg:col-span-6 p-6 md:p-8 flex flex-col justify-between">
                 <div>
                   <div className="inline-flex items-center gap-1.5 text-[11px] font-bold text-slate-500 bg-slate-100 px-2.5 py-1 rounded-lg mb-3">
-                    <Sparkles size={12} className={activeLocation.id === "beauty-world" ? "text-indigo-500" : activeLocation.id === "toa-payoh-wednesday" ? "text-amber-500" : "text-teal-500"} />
+                    <Sparkles size={12} className={activeLocation.id === "beauty-world" ? "text-indigo-500" : activeLocation.id === "toa-payoh-wednesday" ? "text-amber-500" : activeLocation.id === "braddell-studio" ? "text-emerald-500" : "text-teal-500"} />
                     <span>{activeLocation.badge}</span>
                   </div>
 
@@ -158,7 +187,7 @@ const VisitCampusCTA: React.FC = () => {
                   <div className="space-y-1.5 mb-6 bg-slate-50/80 p-3.5 rounded-2xl border border-slate-100">
                     {activeLocation.features.map((feat, idx) => (
                       <div key={idx} className="flex items-center gap-2 text-xs text-slate-700 font-medium">
-                        <CheckCircle2 size={14} className={activeLocation.id === "beauty-world" ? "text-indigo-500 shrink-0" : activeLocation.id === "toa-payoh-wednesday" ? "text-amber-500 shrink-0" : "text-teal-500 shrink-0"} />
+                        <CheckCircle2 size={14} className={activeLocation.id === "beauty-world" ? "text-indigo-500 shrink-0" : activeLocation.id === "toa-payoh-wednesday" ? "text-amber-500 shrink-0" : activeLocation.id === "braddell-studio" ? "text-emerald-500 shrink-0" : "text-teal-500 shrink-0"} />
                         <span>{feat}</span>
                       </div>
                     ))}
@@ -173,7 +202,9 @@ const VisitCampusCTA: React.FC = () => {
                         ? "bg-indigo-600 hover:bg-indigo-700 shadow-indigo-200"
                         : activeLocation.id === "toa-payoh-wednesday"
                           ? "bg-amber-600 hover:bg-amber-700 shadow-amber-200"
-                          : "bg-teal-600 hover:bg-teal-700 shadow-teal-200"
+                          : activeLocation.id === "braddell-studio"
+                            ? "bg-emerald-600 hover:bg-emerald-700 shadow-emerald-200"
+                            : "bg-teal-600 hover:bg-teal-700 shadow-teal-200"
                     }`}>
                       <Calendar size={14} />
                       {activeLocation.ctaText}
@@ -190,20 +221,47 @@ const VisitCampusCTA: React.FC = () => {
                 </div>
               </div>
 
-              {/* --- RIGHT: Clean Light Google Map --- */}
+              {/* --- RIGHT: Clean Light Google Map or Studio Preview --- */}
               <div className="lg:col-span-6 relative min-h-[260px] lg:min-h-[340px] border-t lg:border-t-0 lg:border-l border-slate-100">
-                <iframe 
-                  src={activeLocation.mapEmbedUrl}
-                  className="w-full h-full min-h-[260px] lg:min-h-[340px] border-0"
-                  allowFullScreen
-                  loading="lazy"
-                  referrerPolicy="no-referrer-when-downgrade"
-                  title={`Location map - ${activeLocation.title}`}
-                />
-                <div className="absolute bottom-3 left-3 bg-white/95 backdrop-blur-sm border border-slate-200 px-3 py-1.5 rounded-xl shadow-sm flex items-center gap-2 text-[11px] font-bold text-slate-700">
-                  <MapPin size={13} className="text-teal-600" />
-                  <span className="truncate max-w-[200px] sm:max-w-none">{activeLocation.address}</span>
-                </div>
+                {activeLocation.id === "braddell-studio" ? (
+                  <div className="relative w-full h-full min-h-[260px] lg:min-h-[340px] bg-slate-900 overflow-hidden group">
+                    <img 
+                      src="/images/braddell-studio.jpg" 
+                      alt="Braddell Studio Room A and Room B facilities" 
+                      className="w-full h-full object-cover object-top opacity-90 group-hover:opacity-100 transition-opacity"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-transparent to-transparent pointer-events-none" />
+                    <div className="absolute bottom-3 left-3 right-3 flex items-center justify-between text-white text-xs">
+                      <div className="flex items-center gap-2 bg-slate-950/90 backdrop-blur-sm px-3 py-1.5 rounded-xl border border-white/10">
+                        <MapPin size={13} className="text-emerald-400 shrink-0" />
+                        <span className="truncate">Near Braddell MRT · Room A & B</span>
+                      </div>
+                      <a 
+                        href="https://www.braddellstudio.sg" 
+                        target="_blank" 
+                        rel="noopener noreferrer"
+                        className="bg-emerald-600 hover:bg-emerald-500 text-white font-bold px-3 py-1.5 rounded-xl shadow-xs transition-colors shrink-0"
+                      >
+                        Visit Studio
+                      </a>
+                    </div>
+                  </div>
+                ) : (
+                  <>
+                    <iframe 
+                      src={activeLocation.mapEmbedUrl}
+                      className="w-full h-full min-h-[260px] lg:min-h-[340px] border-0"
+                      allowFullScreen
+                      loading="lazy"
+                      referrerPolicy="no-referrer-when-downgrade"
+                      title={`Location map - ${activeLocation.title}`}
+                    />
+                    <div className="absolute bottom-3 left-3 bg-white/95 backdrop-blur-sm border border-slate-200 px-3 py-1.5 rounded-xl shadow-sm flex items-center gap-2 text-[11px] font-bold text-slate-700">
+                      <MapPin size={13} className="text-teal-600" />
+                      <span className="truncate max-w-[200px] sm:max-w-none">{activeLocation.address}</span>
+                    </div>
+                  </>
+                )}
               </div>
 
             </div>
@@ -211,13 +269,13 @@ const VisitCampusCTA: React.FC = () => {
         </AnimatePresence>
 
         {/* --- Bottom Compact Address Cards --- */}
-        <div className="mt-5 grid grid-cols-1 md:grid-cols-3 gap-3.5">
+        <div className="mt-5 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3.5">
           <div className="bg-white border border-slate-200/80 p-4 rounded-2xl flex items-start gap-3 shadow-sm">
             <div className="w-9 h-9 rounded-xl bg-teal-50 border border-teal-100 text-teal-600 flex items-center justify-center shrink-0 mt-0.5">
               <Building2 size={18} />
             </div>
             <div className="text-xs">
-              <p className="font-bold text-slate-900">Main Centre — Toa Payoh Central</p>
+              <p className="font-bold text-slate-900">Main Centre (Blk 185)</p>
               <p className="text-slate-500 mt-0.5">185 Toa Payoh Central, Lift E, Blk, Toa Payoh Central, #02-342, S(310185)</p>
               <p className="text-slate-400 mt-1">
                 <span className="font-semibold text-slate-600">WhatsApp / Call:</span> <a href="tel:+6597277419" className="text-teal-600 font-bold hover:underline">+65 9727 7419</a>
@@ -230,10 +288,10 @@ const VisitCampusCTA: React.FC = () => {
               <Building2 size={18} />
             </div>
             <div className="text-xs">
-              <p className="font-bold text-slate-900">Toa Payoh (Wednesdays Only)</p>
+              <p className="font-bold text-slate-900">Blk 186 (Wednesdays Only)</p>
               <p className="text-slate-500 mt-0.5">186 Toa Payoh Central, Lobby H 02-430, S(310186)</p>
               <span className="inline-block mt-1 text-[10px] font-bold text-amber-700 bg-amber-100 px-2 py-0.5 rounded">
-                Lessons on Wednesdays Only
+                Wednesdays Only
               </span>
             </div>
           </div>
@@ -247,6 +305,22 @@ const VisitCampusCTA: React.FC = () => {
               <p className="text-slate-500 mt-0.5">Beauty World Shopping Centre, Upper Bukit Timah Road</p>
               <p className="text-slate-400 mt-1">
                 <span className="font-semibold text-slate-600">WhatsApp / Call:</span> <a href="tel:+6597277419" className="text-indigo-600 font-bold hover:underline">+65 9727 7419</a> 
+              </p>
+            </div>
+          </div>
+
+          <div className="bg-white border border-emerald-200/80 p-4 rounded-2xl flex items-start gap-3 shadow-sm">
+            <div className="w-9 h-9 rounded-xl bg-emerald-50 border border-emerald-100 text-emerald-600 flex items-center justify-center shrink-0 mt-0.5">
+              <Building2 size={18} />
+            </div>
+            <div className="text-xs">
+              <p className="font-bold text-slate-900">Braddell Studio (Overflow)</p>
+              <p className="text-slate-500 mt-0.5">Near Braddell MRT (Serving Toa Payoh & Bishan)</p>
+              <span className="inline-block mt-1 text-[10px] font-bold text-emerald-700 bg-emerald-100 px-2 py-0.5 rounded">
+                When Venues Are Full
+              </span>
+              <p className="text-slate-400 mt-1">
+                <a href="https://www.braddellstudio.sg" target="_blank" rel="noopener noreferrer" className="text-emerald-600 font-bold hover:underline">www.braddellstudio.sg</a>
               </p>
             </div>
           </div>

@@ -103,7 +103,8 @@ export default function TermsOfService() {
               <ul className="list-disc pl-5 space-y-1 text-sm sm:text-base">
                 <li><strong>Main Centre:</strong> 185 Toa Payoh Central, Lift E, Blk, Toa Payoh Central, #02-342, Singapore 310185.</li>
                 <li><strong>Mid-week Annex:</strong> 186 Toa Payoh Central, Lobby H 02-430, Singapore 310186 (conducted on Wednesdays only).</li>
-                <li><strong>West Branch:</strong> 431 Clementi Ave 3, Singapore 120431.</li>
+                <li><strong>West Branch:</strong> Beauty World Shopping Centre, Upper Bukit Timah Road (serving Clementi & Bukit Timah).</li>
+                <li><strong>Satellite / Overflow Partner Studio:</strong> Braddell Studio, Near Braddell MRT (www.braddellstudio.sg; arranged for small-group sessions when existing venues are full).</li>
               </ul>
             </div>
 
