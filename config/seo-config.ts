@@ -567,6 +567,29 @@ export const PAGE_SEO: Record<string, PageSeoEntry> = {
     twitter: { card: "summary_large_image", image: "/og/courses-ib.png" },
   },
 
+  "/blog/h2-physics-year-1-revision-solved-paper": {
+    title: "H2 Physics Year 1 Revision: Solved Paper & Solutions | PME",
+    description: "JC1 H2 Physics Year 1 revision questions with detailed step-by-step worked solutions for Measurement, Uncertainty & Kinematics. Download PDF worksheets.",
+    keywords: [
+      "h2 physics year 1 revision",
+      "h2 physics revision paper solved",
+      "jc1 h2 physics worked solutions",
+      "h2 physics topical revision measurement kinematics",
+      "h2 physics uncertainty propagation solutions",
+      "singapore a level physics revision paper",
+      "9749 physics practice paper pdf",
+      "mr chew physics blog",
+    ],
+    canonical: "https://www.makephysicseasy.com/blog/h2-physics-year-1-revision-solved-paper",
+    ogImage: "/images/h2-physics-hero.jpg",
+    og: {
+      title: "H2 Physics Year 1 Revision: Full Solved Paper & Solutions",
+      description: "Step-by-step worked solutions for JC1 H2 Physics Year 1 revision covering Measurement, Uncertainty propagation, and Kinematics. Free PDF download.",
+      image: "/images/h2-physics-hero.jpg",
+    },
+    twitter: { card: "summary_large_image", image: "/images/h2-physics-hero.jpg" },
+  },
+
   "/terms": {
     title: "Terms of Service | Physics Made Easy",
     description:
@@ -1159,6 +1182,7 @@ export const CRAWL_RULES = {
     "/o-level-combined-science-tuition",
     "/h1-physics-tuition",
     "/ib-physics-tuition",
+    "/blog/h2-physics-year-1-revision-solved-paper",
   ],
   disallow: [
     "/admin",
@@ -1218,4 +1242,5 @@ export const SITEMAP_STATIC_PAGES: Array<{
   { path: "/o-level-combined-science-tuition", changeFrequency: "weekly", priority: 0.9 },
   { path: "/h1-physics-tuition", changeFrequency: "weekly", priority: 0.9 },
   { path: "/ib-physics-tuition", changeFrequency: "weekly", priority: 0.9 },
+  { path: "/blog/h2-physics-year-1-revision-solved-paper", changeFrequency: "weekly", priority: 0.8 },
 ];

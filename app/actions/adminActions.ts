@@ -2,6 +2,7 @@
 
 import { prisma } from '@/lib/data'
 import { revalidatePath } from 'next/cache'
+import { STATIC_BLOG_POSTS } from '@/data/static-blogs'
 
 /* ==========================================================================
    COURSES
@@ -168,83 +169,196 @@ export async function editBlogPost(id: number, formData: FormData) {
 }
 
 export async function getBlogPosts() {
-  return await prisma.blogPost.findMany({ orderBy: { date: 'desc' } })
+  try {
+    const dbPosts = await prisma.blogPost.findMany({ orderBy: { date: 'desc' } })
+    const staticSlugs = new Set(dbPosts.map(p => p.slug));
+    const merged = [...dbPosts];
+    for (const sp of STATIC_BLOG_POSTS) {
+      if (!staticSlugs.has(sp.slug)) {
+        merged.push({
+          id: sp.id,
+          title: sp.title,
+          excerpt: sp.excerpt,
+          content: sp.content,
+          category: sp.category,
+          readTime: sp.readTime,
+          image: sp.image,
+          slug: sp.slug,
+          featured: sp.featured,
+          date: new Date(sp.date)
+        });
+      }
+    }
+    return merged.sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
+  } catch (err) {
+    console.error("DB error in getBlogPosts, falling back to static posts:", err);
+    return STATIC_BLOG_POSTS.map(sp => ({
+      ...sp,
+      date: new Date(sp.date)
+    }));
+  }
 }
 
 export async function getBlogPostSummaries() {
-  return await prisma.blogPost.findMany({
-    orderBy: { date: 'desc' },
-    select: {
-      id: true,
-      title: true,
-      excerpt: true,
-      category: true,
-      readTime: true,
-      image: true,
-      slug: true,
-      featured: true,
-      date: true,
+  try {
+    const dbPosts = await prisma.blogPost.findMany({
+      orderBy: { date: 'desc' },
+      select: {
+        id: true,
+        title: true,
+        excerpt: true,
+        category: true,
+        readTime: true,
+        image: true,
+        slug: true,
+        featured: true,
+        date: true,
+      }
+    })
+    const existingSlugs = new Set(dbPosts.map(p => p.slug));
+    const merged = [...dbPosts];
+    for (const sp of STATIC_BLOG_POSTS) {
+      if (!existingSlugs.has(sp.slug)) {
+        merged.push({
+          id: sp.id,
+          title: sp.title,
+          excerpt: sp.excerpt,
+          category: sp.category,
+          readTime: sp.readTime,
+          image: sp.image,
+          slug: sp.slug,
+          featured: sp.featured,
+          date: new Date(sp.date),
+        });
+      }
     }
-  })
+    return merged.sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
+  } catch (err) {
+    console.error("DB error in getBlogPostSummaries, falling back to static posts:", err);
+    return STATIC_BLOG_POSTS.map(sp => ({
+      id: sp.id,
+      title: sp.title,
+      excerpt: sp.excerpt,
+      category: sp.category,
+      readTime: sp.readTime,
+      image: sp.image,
+      slug: sp.slug,
+      featured: sp.featured,
+      date: new Date(sp.date),
+    }));
+  }
 }
 
 export async function getBlogPostBySlug(rawSlug: string) {
   if (!rawSlug) return null;
   const decodedSlug = decodeURIComponent(rawSlug);
-
-  // 1. Exact match with raw slug parameter
-  let post = await prisma.blogPost.findUnique({
-    where: { slug: rawSlug }
-  });
-  if (post) return post;
-
-  // 2. Exact match with decoded slug
-  if (rawSlug !== decodedSlug) {
-    post = await prisma.blogPost.findUnique({
-      where: { slug: decodedSlug }
-    });
-    if (post) return post;
-  }
-
-  // 3. Fallback match by normalized slug or title match across database
   const normalizedTarget = slugify(decodedSlug);
-  const posts = await prisma.blogPost.findMany({
-    select: { id: true, slug: true, title: true }
-  });
 
-  const matched = posts.find(p => 
-    p.slug === rawSlug || 
-    p.slug === decodedSlug || 
+  // First check static blog posts for instant reliability
+  const staticMatch = STATIC_BLOG_POSTS.find(p =>
+    p.slug === rawSlug ||
+    p.slug === decodedSlug ||
     slugify(p.slug) === normalizedTarget ||
     slugify(p.title) === normalizedTarget
   );
+  if (staticMatch) {
+    return {
+      ...staticMatch,
+      date: new Date(staticMatch.date)
+    };
+  }
 
-  if (matched) {
-    return await prisma.blogPost.findUnique({ where: { id: matched.id } });
+  try {
+    // 1. Exact match with raw slug parameter
+    let post = await prisma.blogPost.findUnique({
+      where: { slug: rawSlug }
+    });
+    if (post) return post;
+
+    // 2. Exact match with decoded slug
+    if (rawSlug !== decodedSlug) {
+      post = await prisma.blogPost.findUnique({
+        where: { slug: decodedSlug }
+      });
+      if (post) return post;
+    }
+
+    // 3. Fallback match by normalized slug or title match across database
+    const posts = await prisma.blogPost.findMany({
+      select: { id: true, slug: true, title: true }
+    });
+
+    const matched = posts.find(p => 
+      p.slug === rawSlug || 
+      p.slug === decodedSlug || 
+      slugify(p.slug) === normalizedTarget ||
+      slugify(p.title) === normalizedTarget
+    );
+
+    if (matched) {
+      return await prisma.blogPost.findUnique({ where: { id: matched.id } });
+    }
+  } catch (err) {
+    console.error("DB error in getBlogPostBySlug:", err);
   }
 
   return null;
 }
 
 export async function getRelatedBlogPostSummaries(currentSlug: string, category?: string) {
-  return await prisma.blogPost.findMany({
-    where: {
-      slug: { not: currentSlug },
-      ...(category ? { category } : {})
-    },
-    take: 2,
-    orderBy: { date: 'desc' },
-    select: {
-      id: true,
-      title: true,
-      excerpt: true,
-      category: true,
-      readTime: true,
-      image: true,
-      slug: true,
-      date: true,
-    }
-  })
+  try {
+    const dbPosts = await prisma.blogPost.findMany({
+      where: {
+        slug: { not: currentSlug },
+        ...(category ? { category } : {})
+      },
+      take: 2,
+      orderBy: { date: 'desc' },
+      select: {
+        id: true,
+        title: true,
+        excerpt: true,
+        category: true,
+        readTime: true,
+        image: true,
+        slug: true,
+        date: true,
+      }
+    });
+
+    if (dbPosts.length >= 2) return dbPosts;
+
+    const existingSlugs = new Set([currentSlug, ...dbPosts.map(p => p.slug)]);
+    const fallbackStatic = STATIC_BLOG_POSTS
+      .filter(sp => !existingSlugs.has(sp.slug) && (!category || sp.category === category || true))
+      .map(sp => ({
+        id: sp.id,
+        title: sp.title,
+        excerpt: sp.excerpt,
+        category: sp.category,
+        readTime: sp.readTime,
+        image: sp.image,
+        slug: sp.slug,
+        date: new Date(sp.date),
+      }));
+
+    return [...dbPosts, ...fallbackStatic].slice(0, 2);
+  } catch (err) {
+    console.error("DB error in getRelatedBlogPostSummaries, using static:", err);
+    return STATIC_BLOG_POSTS
+      .filter(sp => sp.slug !== currentSlug)
+      .map(sp => ({
+        id: sp.id,
+        title: sp.title,
+        excerpt: sp.excerpt,
+        category: sp.category,
+        readTime: sp.readTime,
+        image: sp.image,
+        slug: sp.slug,
+        date: new Date(sp.date),
+      }))
+      .slice(0, 2);
+  }
 }
 
 export async function deleteBlogPost(id: number) {
