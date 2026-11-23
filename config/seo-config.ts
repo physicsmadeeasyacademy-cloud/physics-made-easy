@@ -590,6 +590,29 @@ export const PAGE_SEO: Record<string, PageSeoEntry> = {
     twitter: { card: "summary_large_image", image: "/images/h2-physics-hero.jpg" },
   },
 
+  "/blog/epistemological-considerations-in-teaching-physics": {
+    title: "Epistemological Considerations in Teaching Physics | Mr Chew",
+    description: "Discover why memorising formulas fails in higher-level physics and how the epistemological perspective equips educators to perceive student thinking in the moment.",
+    keywords: [
+      "epistemological considerations in teaching physics",
+      "physics teaching philosophy",
+      "epistemology in science education",
+      "david hammer physics education",
+      "how students learn physics",
+      "conceptual physics tuition singapore",
+      "beyond memorising physics formulas",
+      "mr chew physics blog",
+    ],
+    canonical: "https://www.makephysicseasy.com/blog/epistemological-considerations-in-teaching-physics",
+    ogImage: "/images/epistemology-physics-teaching.jpg",
+    og: {
+      title: "Beyond Memorising Formulas: Epistemological Considerations in Teaching Physics",
+      description: "Discover how epistemological awareness equips educators with responsive tools to perceive student thinking in the moment and cultivate genuine inquiry.",
+      image: "/images/epistemology-physics-teaching.jpg",
+    },
+    twitter: { card: "summary_large_image", image: "/images/epistemology-physics-teaching.jpg" },
+  },
+
   "/terms": {
     title: "Terms of Service | Physics Made Easy",
     description:
@@ -1183,6 +1206,7 @@ export const CRAWL_RULES = {
     "/h1-physics-tuition",
     "/ib-physics-tuition",
     "/blog/h2-physics-year-1-revision-solved-paper",
+    "/blog/epistemological-considerations-in-teaching-physics",
   ],
   disallow: [
     "/admin",
@@ -1243,4 +1267,5 @@ export const SITEMAP_STATIC_PAGES: Array<{
   { path: "/h1-physics-tuition", changeFrequency: "weekly", priority: 0.9 },
   { path: "/ib-physics-tuition", changeFrequency: "weekly", priority: 0.9 },
   { path: "/blog/h2-physics-year-1-revision-solved-paper", changeFrequency: "weekly", priority: 0.8 },
+  { path: "/blog/epistemological-considerations-in-teaching-physics", changeFrequency: "weekly", priority: 0.8 },
 ];
