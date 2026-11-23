@@ -554,6 +554,50 @@ export const STATIC_BLOG_POSTS: StaticBlogPost[] = [
     </div>
   </div>
 
+  <!-- APPENDIX / LATEST RESEARCH UPDATE -->
+  <div className="my-10 p-6 sm:p-8 bg-slate-900 text-white rounded-3xl border border-slate-800 shadow-xl space-y-6">
+    <div className="flex items-center gap-3">
+      <span className="px-3 py-1 bg-teal-500/20 text-teal-300 border border-teal-400/30 rounded-full text-xs font-bold uppercase tracking-wider">
+        Appendix & Latest Research Update (2026)
+      </span>
+    </div>
+
+    <h3 className="text-xl sm:text-2xl font-black text-white m-0">
+      The "Knowledge in Pieces" Paradigm & The Full-Circle Irony of Student Profiles
+    </h3>
+
+    <div className="space-y-4 text-slate-300 text-sm sm:text-base leading-relaxed">
+      <p>
+        To push past superficial pedagogy, we must look at the deepest breakthrough in modern physics education research: <strong>the "knowledge in pieces" lineage</strong> pioneered by Andrea diSessa and refined by David Hammer and Andrew Elby.
+      </p>
+
+      <div className="p-5 bg-slate-800/80 rounded-2xl border border-teal-500/30 text-teal-100 italic space-y-2">
+        <p className="text-base sm:text-lg font-medium text-white">
+          "One unified theory, in other words: knowledge, beliefs, and classroom behavior are all 'in pieces,' and instruction succeeds not by replacing structures but by changing which pieces get activated, when, and toward what."
+        </p>
+      </div>
+
+      <p>
+        Frontier learning science is continuing to build on this very foundation — a <strong>2026 Physical Review</strong> paper proposes formalizing phenomenological primitives (<em>p-prims</em>) using <strong>frame semantics</strong>, creating computational models that enable real-time, AI-driven analysis of student physical reasoning.
+      </p>
+
+      <div className="p-5 bg-amber-950/40 border border-amber-500/30 rounded-2xl space-y-3 text-amber-200">
+        <h4 className="font-bold text-amber-300 text-base flex items-center gap-2">
+          <span>⚖️</span> The Full-Circle Irony of "Two Types of Students"
+        </h4>
+        <p className="text-sm sm:text-base text-amber-100/90 leading-relaxed">
+          Here lies the profound, full-circle irony: contrasting a "formula memoriser" against a "deep concept thinker" risks slipping into the exact <em>trait-like, misconceptions-style framing</em> that this entire research tradition — from diSessa through Hammer and Elby — spent thirty years dismantling. 
+        </p>
+        <p className="text-sm sm:text-base text-amber-100/90 leading-relaxed">
+          Students do not belong to static cognitive castes. The very same student who blindly plugs numbers into an equation on an exam paper uses sophisticated, intuitive epistemic resources when fixing a bicycle or evaluating a chess move. 
+        </p>
+        <p className="text-sm sm:text-base font-semibold text-white bg-amber-900/40 p-3 rounded-xl border border-amber-400/20">
+          The truly defensible pedagogical conclusion is this: <strong>Don't try to convert the student; change what the situation cues.</strong>
+        </p>
+      </div>
+    </div>
+  </div>
+
   <!-- CALL TO ACTION BOX -->
   <div className="mt-12 p-8 bg-gradient-to-r from-teal-900 to-slate-900 rounded-3xl text-white shadow-2xl space-y-6">
     <div className="max-w-2xl">
